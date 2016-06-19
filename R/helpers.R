@@ -4,6 +4,36 @@
 #' @export
 adt<-function(x) as.data.table(x)
 
+#' \code{adf} Cast as a data.frame
+#' @param x object to convert to a data.frame
+#' @export
+adf<-function(x) as.data.frame(x)
+
+#' \code{am} Cast as a matrix
+#' @param x object to convert to a matrix
+#' @export
+am<-function(x) as.matrix(x)
+
+#' \code{aspM} Cast as a sparse matrix
+#' @param x object to convert to a sparse matrix
+#' @export
+aspM<-function(x){ as.matrix(x) %>% Matrix::Matrix(sparse=T) }
+
+#' \code{an} Cast as numeric
+#' @param x object to convert to numeric
+#' @export
+an<-function(x) as.numeric(x)
+
+#' \code{ai} Cast as integer
+#' @param x object to convert to integer
+#' @export
+ai<-function(x) as.integer(x)
+
+#' \code{ac} Cast as character
+#' @param x object to convert to character
+#' @export
+ac<-function(x) as.character(x)
+
 #' \code{getSize}
 #' @param x the object
 #' @export
@@ -51,14 +81,47 @@ coalesce<-function(a,b){
   return(a)
 }
 
-#' Count NA
+#' Count Missing values
 #'
-#' @param x value
-#' @return return values according to priority, and NA where both a and b are missing.
+#' @param x values
+#' @return returns count of missing values
 #' @export
-count.na<-function(x){
-  sum(is.na(x))
+count.na<-function(x){ sum(is.na(x)) }
+
+#' Count Non-missing values
+#'
+#' @param x values
+#' @return return count of non-missing values
+#' @export
+count.nna<-function(x){ sum(!is.na(x)) }
+
+#' Replace conditional on given function
+#' @param x values
+#' @param value replacement value
+#' @export
+fill.f<-function(x,value,f=is.na){
+  x[f(x)]<-value
+  x
 }
+
+#' Replace Na
+#' @param x values
+#' @param value replacement value
+#' @export
+fill.na<-function(x,value) fill.f(x,value,is.na)
+
+#' Replace NaN
+#' @param x values
+#' @param value replacement value
+#' @export
+fill.nan<-function(x,value) fill.f(x,value,is.nan)
+
+#' Replace Inf
+#' @param x values
+#' @param value replacement value
+#' @export
+fill.inf<-function(x,value) fill.f(x,value,is.infinite)
+
 
 
 
