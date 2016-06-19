@@ -44,24 +44,24 @@ getSize<-function(x) format(object.size(x),units="GB")
 #' @export
 sigmoid<-function(x){ 1/(1+exp(-x)) }
 
-#' NxN matrix of 1s
-#'
-#' @param n number of dimensions
-#' @export
-ones<-function(n) matrix(rep(1,n*n),nrow=n)
-
-#' NxN matrix of values
-#'
-#' @param n number of dimensions
-#' @export
-fill_nxn<-function(n,value) matrix(rep(value,n*n),nrow=n)
-
 #' NxM matrix of values
 #'
 #' @param n number of rows
 #' @param m number of columns
 #' @export
-fill_nxm<-function(n,m,value) matrix(rep(value,n*m),nrow=n)
+nxm<-function(n,m,value) matrix(rep(value,n*m),nrow=n)
+
+#' NxN matrix of values
+#'
+#' @param n number of dimensions
+#' @export
+nxn<-function(n,value) nxm(n,n,value)
+
+#' NxN matrix of 1s
+#'
+#' @param n number of dimensions
+#' @export
+ones<-function(n) nxn(n,1)
 
 #' Coalesce values
 #'
