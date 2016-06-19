@@ -1,0 +1,13 @@
+Package: KaggleR
+Type: Package
+Title: Kaggle R Tools
+Version: 0.1.0
+Author: Jeremy Oldfather
+Maintainer: Brian Williams <bw@NBC>
+Description: A toolkit for Kaggle competitions and general use
+License: GPLv3
+LazyData: TRUE
+RoxygenNote: 5.0.1.9000
+Depends:
+  devtools, readr, ggplot2, data.table, dplyr, tidyr, parallel, stringr, Rcpp, permute
+
