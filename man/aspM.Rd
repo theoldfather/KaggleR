@@ -2,14 +2,14 @@
 % Please edit documentation in R/helpers.R
 \name{aspM}
 \alias{aspM}
-\title{\code{aspM} Cast as a sparse matrix}
+\title{\code{aspM} Cast as a sparse Matrix}
 \usage{
 aspM(x)
 }
 \arguments{
-\item{x}{object to convert to a sparse matrix}
+\item{x}{object to convert to a sparse Matrix}
 }
 \description{
-\code{aspM} Cast as a sparse matrix
+\code{aspM} Cast as a sparse Matrix
 }
 

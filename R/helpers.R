@@ -14,8 +14,13 @@ adf<-function(x) as.data.frame(x)
 #' @export
 am<-function(x) as.matrix(x)
 
-#' \code{aspM} Cast as a sparse matrix
-#' @param x object to convert to a sparse matrix
+#' \code{aM} Cast as a Matrix
+#' @param x object to convert to a Matrix
+#' @export
+aM<-function(x){ as.matrix(x) %>% Matrix::Matrix() }
+
+#' \code{aspM} Cast as a sparse Matrix
+#' @param x object to convert to a sparse Matrix
 #' @export
 aspM<-function(x){ as.matrix(x) %>% Matrix::Matrix(sparse=T) }
 

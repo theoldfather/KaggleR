@@ -9,5 +9,16 @@ License: GPLv3
 LazyData: TRUE
 RoxygenNote: 5.0.1.9000
 Depends:
-  devtools, readr, ggplot2, data.table, dplyr, tidyr, parallel, stringr, Rcpp, permute
+  devtools,
+  readr,
+  ggplot2,
+  data.table,
+  dplyr,
+  tidyr,
+  parallel,
+  stringr,
+  Rcpp,
+  permute,
+  Matrix,
+  lubridate
 

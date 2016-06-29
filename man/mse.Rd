@@ -4,7 +4,7 @@
 \alias{mse}
 \title{Mean Squared Error}
 \usage{
-mse(y.hat, y)
+mse(y.hat, y, na.action = na.fail)
 }
 \arguments{
 \item{y.hat}{Fitted values}
